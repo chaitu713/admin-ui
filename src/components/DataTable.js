@@ -34,15 +34,17 @@ const DataTable = ({
       title: "Actions",
       dataIndex: "actions",
       align: "center",
+
       render: (_, record) => {
         return (
-          <>
+          <React.Fragment>
             <Button
               shape="circle"
-              icon={<EditTwoTone twoToneColor="#21B6A8" />}
+              icon={<EditTwoTone twoToneColor="#21B6A8" className="iconbtns" />}
               size="small"
               style={{ borderColor: "#21B6A8" }}
               onClick={() => handleEdit(record)}
+              className="tablebtns"
             />
             <Popconfirm
               title="Do you really want to delete this row?"
@@ -51,15 +53,17 @@ const DataTable = ({
               icon={<QuestionCircleOutlined style={{ color: "red" }} />}
               onConfirm={() => handleDelete(record)}
               okType="danger"
+              placement="bottomLeft"
             >
               <Button
                 shape="circle"
-                icon={<DeleteTwoTone twoToneColor="red" />}
+                icon={<DeleteTwoTone twoToneColor="red" className="iconbtns" />}
                 size="small"
                 style={{ marginLeft: "20px", borderColor: "red" }}
+                className="tablebtns"
               />
             </Popconfirm>
-          </>
+          </React.Fragment>
         );
       },
     },
@@ -71,10 +75,11 @@ const DataTable = ({
         columns={columns}
         dataSource={tableData}
         bordered
-        style={{
-          width: "750px",
-          marginLeft: "400px",
-        }}
+        className="datatable"
+        // style={{
+        //   width: "750px",
+        //   marginLeft: "400px",
+        // }}
         rowSelection={{
           type: "checkbox",
           onChange: (selectedRowKeys, selectedRows) => {
@@ -94,11 +99,11 @@ const DataTable = ({
           danger
           onClick={() => removeSelected()}
           style={{
-            marginLeft: "400px",
-            marginTop: "-50px",
             display: "flex",
             background: "red",
+            marginTop: "-45px",
           }}
+          className="deltbtn"
         >
           Delete Selected
         </Button>

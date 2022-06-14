@@ -10,7 +10,7 @@ const SearchData = ({
 }) => {
   const { Search } = Input;
   return (
-    <div>
+    <div className="App">
       <br />
       <Search
         placeholder="Search by Name, Email or Role"
@@ -19,10 +19,11 @@ const SearchData = ({
         onChange={handleSearch}
         enterButton
         onKeyUp={searchData}
-        style={{
-          width: "750px",
-          marginLeft: "401px",
-        }}
+        className="searchbar"
+        // style={{
+        //   width: "50%",
+        //   marginLeft: "25%",
+        // }}
       />
     </div>
   );

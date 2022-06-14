@@ -12,7 +12,7 @@ const ModalForm = ({ editRow, setEditRow, isEdit, saveEdit, resetEdit }) => {
     });
   });
   return (
-    <div>
+    <div className="App">
       <Modal
         visible={isEdit}
         onCancel={() => {
